@@ -43,6 +43,7 @@ INFORMACIÓN RESPUESTA
 | String       | Mensaje de conexión establecida     | Conexión       |
 +--------------+-------------------------------------+----------------+
 
+
 ===================
 ValidarCredenciales
 ===================
@@ -69,5 +70,178 @@ Parámetros cuerpo solicitud:
 +--------------+-------------------------------------+----------------+----------------+-------------+
 | Proveedor    | Nombre del proveedor                | String         | Si             |             | 
 +--------------+-------------------------------------+----------------+----------------+-------------+
+
+---------------------
+INFORMACIÓN RESPUESTA
+---------------------
+
++--------------+-------------------------------------+-----------------------------------------------+
+|  Tipo        | Descripcion                         | Ejemplo                                       | 
++==============+=====================================+===============================================+
+| Guid         | Token: Identificador único de acceso| Credenciales válidas:                         |
+|              | requerido para consumir los métodos | EBA5899B-1CBA-4EAB-9C16-9C0CCD33A3FF          |
+|              | del servicio WebAPI.                | Credenciales no válidas: mensaje de           |        
+|              |                                     | respuesta: Acceso no autorizado con           |
+|              |                                     | código HTTP 401.                              |
++--------------+-------------------------------------+-----------------------------------------------+
+
+
+
+==================
+RegistrarActuacion
+==================
+
+*Método HTTP:* **POST**
+Registra la información de una actuación y retorna el identificador único de la actuación.
+
+---------------------
+INFORMACIÓN SOLICITUD
+---------------------
+
+Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)
+
+Parámetros URL: Ninguno
+
+Parámetros cuerpo solicitud:
+
++--------------+--------------------------------------------------------------------------------------------------------------------------+
+|  Objeto      | RegistrarActuacionModel                                                                                                  | 
++==============+=====================================+================+================+==================================================+
+| Nombre       | Descripcion                         | Tipo           | Obligatorio    |Restricción                                       | 
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+| Oficina      | Nombre de la Oficina                | String         | Si             | Nombre de la oficina a la cual pertenece el caso.|
+|              |                                     |                |                | Máximo 128 caracteres.                           |
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+| Caso         | Identificador del caso              | Guid           | Si             | Identificador único del caso provisto por        | 
+|              |                                     |                |                | LegisOffice                                      | 
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+| Titulo       | Título de la actuación              | String         | Si             | Máximo 200 caracteres                            | 
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+| Descripción  | Descripción de la actuación         | String         | Si             | Máximo 4000 caracteres                           | 
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+| Fecha        | Fecha de la actuación               | Date           | Si             | Formato: YYYY-MM-DD                              | 
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+| Radicado     | Número de radicado                  | String         | Si             | Máximo 50 caracteres.                            | 
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+| Juzgado      | Nombre del juzgado                  | String         | Si             | Máximo 1000 Caracteres                           | 
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+| Vencimiendo  | Listado con la información de ven   | Array          |No              |                                                  |
+| de términos  | cimiento de términos                |                |                |                                                  |
+|              | (tipo: VencimientoTerminoModel).    |                |                |                                                  |
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+| Audiencias   | Listado con la información de       | Array          |No              |                                                  |
+|              | audiencias (tipo: AudienciaModel).  |                |                |                                                  |
+|              |                                     |                |                |                                                  |
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+| Finalización | Indica si con esta actuación se está| Bool           |No              |                                                  |
+| Servicio     | finalizado el servicio de Vigilancia|                |                |                                                  |
+|              | Judicial para este caso.            |                |                |                                                  |
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+| CódigoExterno| Código con el cual el proveedor     | String         |No              | Máximo 150 caracteres                            |
+|              | tiene registrado el caso o actuación|                |                |                                                  |
+|              | en su sistema                       |                |                |                                                  |
++--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
+
+Propiedad VencimientoTerminos  de tipo VencimientoTerminoModel.
+.. image:: imagenes/tabla_pvt.png
+
+Propiedad Audiencias de tipo AudienciaModel.
+.. image:: imagenes/tabla_am.png
+
+---------------------
+INFORMACIÓN RESPUESTA
+---------------------
+.. image:: imagenes/tabla3.png
+
+
+
+===========================
+RegistrarDocumentoActuacion
+===========================
+
+*Método HTTP:* **POST**
+Registra un documento sobre una actuación y retorna si se pudo registrar o no.
+
+---------------------
+INFORMACIÓN SOLICITUD
+---------------------
+Cabecera de autenticación: Authentication = Token -Espacio- Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)
+
+Parámetros URL: Ninguno
+
+Parámetros cuerpo solicitud:
+.. image:: imagenes/tabla4.png
+
+---------------------
+INFORMACIÓN RESPUESTA
+---------------------
+.. image:: imagenes/tabla5.png
+
+
+
+===================
+ActualizarActuacion
+===================
+*Método HTTP:* **PUT**
+Actualiza la información de una actuación y retorna si se pudo actualizar o no.
+
+---------------------
+INFORMACIÓN SOLICITUD
+---------------------
+Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)
+
+Parámetros URL: Ninguno
+
+Parámetros cuerpo solicitud:
+.. image:: imagenes/tabla6.png
+
+Propiedad VencimientoTerminos  de tipo VencimientoTerminoModel.
+.. image:: imagenes/tabla7.png
+
+Propiedad Audiencias de tipo AudienciaModel.
+.. image:: imagenes/tabla8.png
+
+---------------------
+INFORMACIÓN RESPUESTA
+---------------------
+.. image:: imagenes/tabla9.png
+
+
+=================
+EliminarActuacion
+=================
+
+*Método HTTP:* **POST**
+Elimina una actuación y los documentos asociados a la misma. Retorna si se pudo realizar la eliminación o no.
+
+---------------------
+INFORMACIÓN SOLICITUD
+---------------------
+Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)
+
+Parámetros URL: Ninguno
+
+Parámetros cuerpo solicitud:
+.. image:: imagenes/tabla10.png
+
+---------------------
+INFORMACIÓN RESPUESTA
+---------------------
+.. image:: imagenes/tabla11.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

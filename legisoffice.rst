@@ -1,6 +1,5 @@
-************
 LegisOffice
-************
+===========
 
 .. image:: imagenes/legisoffice.png
 
@@ -11,3 +10,6 @@ Legis te permite
 * Obtener un informe detallado con las tareas, responsables, tiempos de ejecución
 * Alerta de las actuaciones procesales
 * Llevar tu expediente de manera electrónica
+
+
+

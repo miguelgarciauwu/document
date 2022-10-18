@@ -21,6 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Servicio WebAPI mensajes de error" href="servicioweb_api_mensajesdeerror.html" />
     <link rel="prev" title="LegisOffice" href="legisoffice.html" /> 
 </head>
 
@@ -39,16 +40,45 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Módulos:</span></p>
-<ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Legis:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="legisoffice.html">LegisOffice</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Módulos:</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Servicio Web Api</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#validarcredenciales">ValidarCredenciales</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#informacion-solicitud">INFORMACIÓN SOLICITUD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#informacion-respuesta">INFORMACIÓN RESPUESTA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#registraractuacion">RegistrarActuacion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">INFORMACIÓN SOLICITUD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">INFORMACIÓN RESPUESTA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#registrardocumentoactuacion">RegistrarDocumentoActuacion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">INFORMACIÓN SOLICITUD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">INFORMACIÓN RESPUESTA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#actualizaractuacion">ActualizarActuacion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">INFORMACIÓN SOLICITUD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">INFORMACIÓN RESPUESTA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#eliminaractuacion">EliminarActuacion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">INFORMACIÓN SOLICITUD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">INFORMACIÓN RESPUESTA</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="servicioweb_api_mensajesdeerror.html">Servicio WebAPI mensajes de error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagramainteraccion_webapi.html">Diagrama interacción servicio WebAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="invocacion_webapi.html">Invocación del servicio WebAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reportes.html">Reportes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restricciones.html">Restricciones</a></li>
 </ul>
 
         </div>
@@ -167,6 +197,204 @@ Valida las credenciales de autenticación para un proveedor y genera un identifi
 </tbody>
 </table>
 </section>
+<section id="informacion-respuesta">
+<h3>INFORMACIÓN RESPUESTA<a class="headerlink" href="#informacion-respuesta" title="Enlace permanente a este encabezado"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 38%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripcion</p></th>
+<th class="head"><p>Ejemplo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Guid</p></td>
+<td><p>Token: Identificador único de acceso
+requerido para consumir los métodos
+del servicio WebAPI.</p></td>
+<td><p>Credenciales válidas:
+EBA5899B-1CBA-4EAB-9C16-9C0CCD33A3FF
+Credenciales no válidas: mensaje de
+respuesta: Acceso no autorizado con
+código HTTP 401.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="registraractuacion">
+<h2>RegistrarActuacion<a class="headerlink" href="#registraractuacion" title="Enlace permanente a este encabezado"></a></h2>
+<p><em>Método HTTP:</em> <strong>POST</strong>
+Registra la información de una actuación y retorna el identificador único de la actuación.</p>
+<section id="id1">
+<h3>INFORMACIÓN SOLICITUD<a class="headerlink" href="#id1" title="Enlace permanente a este encabezado"></a></h3>
+<p>Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)</p>
+<p>Parámetros URL: Ninguno</p>
+<p>Parámetros cuerpo solicitud:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 28%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Objeto</p></th>
+<th class="head" colspan="4"><p>RegistrarActuacionModel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nombre</p></td>
+<td><p>Descripcion</p></td>
+<td><p>Tipo</p></td>
+<td><p>Obligatorio</p></td>
+<td><p>Restricción</p></td>
+</tr>
+<tr class="row-odd"><td><p>Oficina</p></td>
+<td><p>Nombre de la Oficina</p></td>
+<td><p>String</p></td>
+<td><p>Si</p></td>
+<td><p>Nombre de la oficina a la cual pertenece el caso.
+Máximo 128 caracteres.</p></td>
+</tr>
+<tr class="row-even"><td><p>Caso</p></td>
+<td><p>Identificador del caso</p></td>
+<td><p>Guid</p></td>
+<td><p>Si</p></td>
+<td><p>Identificador único del caso provisto por
+LegisOffice</p></td>
+</tr>
+<tr class="row-odd"><td><p>Titulo</p></td>
+<td><p>Título de la actuación</p></td>
+<td><p>String</p></td>
+<td><p>Si</p></td>
+<td><p>Máximo 200 caracteres</p></td>
+</tr>
+<tr class="row-even"><td><p>Descripción</p></td>
+<td><p>Descripción de la actuación</p></td>
+<td><p>String</p></td>
+<td><p>Si</p></td>
+<td><p>Máximo 4000 caracteres</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fecha</p></td>
+<td><p>Fecha de la actuación</p></td>
+<td><p>Date</p></td>
+<td><p>Si</p></td>
+<td><p>Formato: YYYY-MM-DD</p></td>
+</tr>
+<tr class="row-even"><td><p>Radicado</p></td>
+<td><p>Número de radicado</p></td>
+<td><p>String</p></td>
+<td><p>Si</p></td>
+<td><p>Máximo 50 caracteres.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Juzgado</p></td>
+<td><p>Nombre del juzgado</p></td>
+<td><p>String</p></td>
+<td><p>Si</p></td>
+<td><p>Máximo 1000 Caracteres</p></td>
+</tr>
+<tr class="row-even"><td><p>Vencimiendo
+de términos</p></td>
+<td><p>Listado con la información de ven
+cimiento de términos
+(tipo: VencimientoTerminoModel).</p></td>
+<td><p>Array</p></td>
+<td><p>No</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Audiencias</p></td>
+<td><p>Listado con la información de
+audiencias (tipo: AudienciaModel).</p></td>
+<td><p>Array</p></td>
+<td><p>No</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Finalización
+Servicio</p></td>
+<td><p>Indica si con esta actuación se está
+finalizado el servicio de Vigilancia
+Judicial para este caso.</p></td>
+<td><p>Bool</p></td>
+<td><p>No</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>CódigoExterno</p></td>
+<td><p>Código con el cual el proveedor
+tiene registrado el caso o actuación
+en su sistema</p></td>
+<td><p>String</p></td>
+<td><p>No</p></td>
+<td><p>Máximo 150 caracteres</p></td>
+</tr>
+</tbody>
+</table>
+<p>Propiedad VencimientoTerminos  de tipo VencimientoTerminoModel.
+.. image:: imagenes/tabla_pvt.png</p>
+<p>Propiedad Audiencias de tipo AudienciaModel.
+.. image:: imagenes/tabla_am.png</p>
+</section>
+<section id="id2">
+<h3>INFORMACIÓN RESPUESTA<a class="headerlink" href="#id2" title="Enlace permanente a este encabezado"></a></h3>
+<img alt="_images/tabla3.png" src="_images/tabla3.png" />
+</section>
+</section>
+<section id="registrardocumentoactuacion">
+<h2>RegistrarDocumentoActuacion<a class="headerlink" href="#registrardocumentoactuacion" title="Enlace permanente a este encabezado"></a></h2>
+<p><em>Método HTTP:</em> <strong>POST</strong>
+Registra un documento sobre una actuación y retorna si se pudo registrar o no.</p>
+<section id="id3">
+<h3>INFORMACIÓN SOLICITUD<a class="headerlink" href="#id3" title="Enlace permanente a este encabezado"></a></h3>
+<p>Cabecera de autenticación: Authentication = Token -Espacio- Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)</p>
+<p>Parámetros URL: Ninguno</p>
+<p>Parámetros cuerpo solicitud:
+.. image:: imagenes/tabla4.png</p>
+</section>
+<section id="id4">
+<h3>INFORMACIÓN RESPUESTA<a class="headerlink" href="#id4" title="Enlace permanente a este encabezado"></a></h3>
+<img alt="_images/tabla5.png" src="_images/tabla5.png" />
+</section>
+</section>
+<section id="actualizaractuacion">
+<h2>ActualizarActuacion<a class="headerlink" href="#actualizaractuacion" title="Enlace permanente a este encabezado"></a></h2>
+<p><em>Método HTTP:</em> <strong>PUT</strong>
+Actualiza la información de una actuación y retorna si se pudo actualizar o no.</p>
+<section id="id5">
+<h3>INFORMACIÓN SOLICITUD<a class="headerlink" href="#id5" title="Enlace permanente a este encabezado"></a></h3>
+<p>Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)</p>
+<p>Parámetros URL: Ninguno</p>
+<p>Parámetros cuerpo solicitud:
+.. image:: imagenes/tabla6.png</p>
+<p>Propiedad VencimientoTerminos  de tipo VencimientoTerminoModel.
+.. image:: imagenes/tabla7.png</p>
+<p>Propiedad Audiencias de tipo AudienciaModel.
+.. image:: imagenes/tabla8.png</p>
+</section>
+<section id="id6">
+<h3>INFORMACIÓN RESPUESTA<a class="headerlink" href="#id6" title="Enlace permanente a este encabezado"></a></h3>
+<img alt="_images/tabla9.png" src="_images/tabla9.png" />
+</section>
+</section>
+<section id="eliminaractuacion">
+<h2>EliminarActuacion<a class="headerlink" href="#eliminaractuacion" title="Enlace permanente a este encabezado"></a></h2>
+<p><em>Método HTTP:</em> <strong>POST</strong>
+Elimina una actuación y los documentos asociados a la misma. Retorna si se pudo realizar la eliminación o no.</p>
+<section id="id7">
+<h3>INFORMACIÓN SOLICITUD<a class="headerlink" href="#id7" title="Enlace permanente a este encabezado"></a></h3>
+<p>Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)</p>
+<p>Parámetros URL: Ninguno</p>
+<p>Parámetros cuerpo solicitud:
+.. image:: imagenes/tabla10.png</p>
+</section>
+<section id="id8">
+<h3>INFORMACIÓN RESPUESTA<a class="headerlink" href="#id8" title="Enlace permanente a este encabezado"></a></h3>
+<img alt="_images/tabla11.png" src="_images/tabla11.png" />
+</section>
 </section>
 </section>
 
@@ -175,6 +403,7 @@ Valida las credenciales de autenticación para un proveedor y genera un identifi
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
         <a href="legisoffice.html" class="btn btn-neutral float-left" title="LegisOffice" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="servicioweb_api_mensajesdeerror.html" class="btn btn-neutral float-right" title="Servicio WebAPI mensajes de error" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -197,7 +426,19 @@ Valida las credenciales de autenticación para un proveedor y genera un identifi
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #2A95C7;
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      background: #343131;
+    }
+  </style>
+
 
 </body>
 </html>

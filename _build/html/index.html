@@ -39,10 +39,18 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Módulos:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Legis:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="legisoffice.html">LegisOffice</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Módulos:</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="servicioweb_api.html">Servicio Web Api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="servicioweb_api_mensajesdeerror.html">Servicio WebAPI mensajes de error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagramainteraccion_webapi.html">Diagrama interacción servicio WebAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="invocacion_webapi.html">Invocación del servicio WebAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reportes.html">Reportes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restricciones.html">Restricciones</a></li>
 </ul>
 
         </div>
@@ -78,16 +86,43 @@
 <li><p>Consultorios jurídicos</p></li>
 <li><p>Despachos judiciales</p></li>
 </ul>
+<section id="legisoffice-te-permite">
+<h2>LEGISOFFICE te permite<a class="headerlink" href="#legisoffice-te-permite" title="Enlace permanente a este encabezado"></a></h2>
+<a class="reference internal image-reference" href="_images/descargar.png"><img alt="_images/descargar.png" class="align-left" src="_images/descargar.png" style="width: 20px;" /></a>
+<p>Descargar Reportes Gerenciales y Diseña tus versiones personalizadas.</p>
+<a class="reference internal image-reference" href="_images/cargando.png"><img alt="_images/cargando.png" class="align-left" src="_images/cargando.png" style="width: 20px;" /></a>
+<p>Tener trazabilidad completa de los procesos</p>
+<a class="reference internal image-reference" href="_images/documento.png"><img alt="_images/documento.png" class="align-left" src="_images/documento.png" style="width: 20px;" /></a>
+<p>Obtener un informe detallado con las tareas, responsables, tiempos de ejecución</p>
+<a class="reference internal image-reference" href="_images/campana.png"><img alt="_images/campana.png" class="align-left" src="_images/campana.png" style="width: 20px;" /></a>
+<p>Alerta de las actuaciones procesales</p>
+<a class="reference internal image-reference" href="_images/cargardocumento.png"><img alt="_images/cargardocumento.png" class="align-left" src="_images/cargardocumento.png" style="width: 20px;" /></a>
+<p>Llevar tu expediente de manera electrónica</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Legis:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="legisoffice.html">LegisOffice</a></li>
+</ul>
+</div>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Módulos:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="legisoffice.html">LegisOffice</a></li>
 <li class="toctree-l1"><a class="reference internal" href="servicioweb_api.html">Servicio Web Api</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="servicioweb_api.html#validarcredenciales">ValidarCredenciales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicioweb_api.html#registraractuacion">RegistrarActuacion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicioweb_api.html#registrardocumentoactuacion">RegistrarDocumentoActuacion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicioweb_api.html#actualizaractuacion">ActualizarActuacion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicioweb_api.html#eliminaractuacion">EliminarActuacion</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="servicioweb_api_mensajesdeerror.html">Servicio WebAPI mensajes de error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagramainteraccion_webapi.html">Diagrama interacción servicio WebAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="invocacion_webapi.html">Invocación del servicio WebAPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reportes.html">Reportes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restricciones.html">Restricciones</a></li>
 </ul>
 </div>
+</section>
 </section>
 
 
@@ -117,7 +152,19 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #2A95C7;
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      background: #343131;
+    }
+  </style>
+
 
 </body>
 </html>
