@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicio Web Api &mdash; documentación de VirtualS - es</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="LegisOffice" href="legisoffice.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> VirtualS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Módulos:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="legisoffice.html">LegisOffice</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Servicio Web Api</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#validarcredenciales">ValidarCredenciales</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#informacion-solicitud">INFORMACIÓN SOLICITUD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">VirtualS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Servicio Web Api</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/servicioweb_api.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="servicio-web-api">
+<h1>Servicio Web Api<a class="headerlink" href="#servicio-web-api" title="Enlace permanente a este encabezado"></a></h1>
+<p>El protocolo HTTP no sirve sólo para proveer páginas web sino también es una potente plataforma para la construcción de APIs que exponen
+servicios y datos. HTTP es simple, flexible y ubicuo. Casi cualquier plataforma actualmente tiene o utiliza el protocolo HTTP, por lo que
+los servicios HTTP pueden llegar a una amplia gama de clientes, incluyendo los navegadores, dispositivos móviles y aplicaciones de escritorio
+tradicionales.</p>
+<p>Microsoft ASP.NET WebAPI es un marco para la construcción de las API web en la parte superior del marco .NET de Microsoft
+que permite aprovechar todo el conjunto de características presente sobre el protocolo HTTP.</p>
+<p>El servicio WebAPI de LegisOffice utiliza esta herramienta de Microsoft WebAPI para exponer servicios a sus clientes mediante
+peticiones HTTP (GET, POST, PUT, DELETE) en formato JSON.</p>
+<p>El servicio WebAPI de LegisOffice se encarga de exponer métodos generales de recepción de información de vigilancia judicial
+a partir de un mecanismo de autenticación basado en Usuario / Clave / Proveedor.</p>
+<p>Para poder acceder a algún un recurso – excepto Test y ValidarCredenciales – es requerido que el cliente incluya el Token
+de acceso - obtenido al validar sus credenciales - en el encabezado de autorización de la petición HTTP.</p>
+<p>A continuación, se describen a detalla los contratos expuestos en el servicio WebAPI.</p>
+<p>URL del servicio en producción: <a class="reference external" href="https://vj.legisoffice.com/LOServiceVJ/">https://vj.legisoffice.com/LOServiceVJ/</a>. Todos los recursos están agrupados sobre el controlador
+llamado: VJ, la URL de consumo quedaría así: <a class="reference external" href="https://vj.legisoffice.com/LOServiceVJ/VJ/">https://vj.legisoffice.com/LOServiceVJ/VJ/</a> + EL RECURSO SOLICITADO</p>
+<p><strong>Test</strong></p>
+<p>Método HTTP: GET
+Verifica si el servicio de vigilancia judicial está disponible.
+INFORMACIÓN SOLICITUD
+Parámetros URL: Ninguno</p>
+<p>Parámetros cuerpo solicitud: Ninguno</p>
+<p>INFORMACIÓN RESPUESTA</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 55%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipo</p></th>
+<th class="head"><p>Descripcion</p></th>
+<th class="head"><p>Mensaje</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>String</p></td>
+<td><p>Mensaje de conexión establecida</p></td>
+<td><p>Conexión</p></td>
+</tr>
+</tbody>
+</table>
+<section id="validarcredenciales">
+<h2>ValidarCredenciales<a class="headerlink" href="#validarcredenciales" title="Enlace permanente a este encabezado"></a></h2>
+<p>Método HTTP: <strong>POST</strong>
+Valida las credenciales de autenticación para un proveedor y genera un identificador único de sesión</p>
+<section id="informacion-solicitud">
+<h3>INFORMACIÓN SOLICITUD<a class="headerlink" href="#informacion-solicitud" title="Enlace permanente a este encabezado"></a></h3>
+<p>Parámetros URL: Ninguno</p>
+<p>Parámetros cuerpo solicitud:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 39%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Objeto</p></th>
+<th class="head" colspan="4"><p>AutenticaciónModel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Nombre</p></td>
+<td><p>Descripcion</p></td>
+<td><p>Tipo</p></td>
+<td><p>Obligatorio</p></td>
+<td><p>Restricción</p></td>
+</tr>
+<tr class="row-odd"><td><p>Usuario</p></td>
+<td><p>Nombre de Usuario</p></td>
+<td><p>String</p></td>
+<td><p>Si</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Clave</p></td>
+<td><p>Constraseña</p></td>
+<td><p>String</p></td>
+<td><p>Si</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Proveedor</p></td>
+<td><p>Nombre del proveedor</p></td>
+<td><p>String</p></td>
+<td><p>Si</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="legisoffice.html" class="btn btn-neutral float-left" title="LegisOffice" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2022, Harold French.</p>
+  </div>
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
