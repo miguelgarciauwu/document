@@ -2,6 +2,8 @@
 LegisOffice
 ************
 
+.. image:: imagenes/legisoffice.png
+
 Legis te permite
 
 * Descargar Reportes Gerenciales y Diseña tus versiones personalizadas.
