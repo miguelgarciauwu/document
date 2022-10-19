@@ -117,7 +117,7 @@ que permite aprovechar todo el conjunto de características presente sobre el pr
 peticiones HTTP (GET, POST, PUT, DELETE) en formato JSON.</p>
 <p>El servicio WebAPI de LegisOffice se encarga de exponer métodos generales de recepción de información de vigilancia judicial
 a partir de un mecanismo de autenticación basado en Usuario / Clave / Proveedor.</p>
-<p>Para poder acceder a algún un recurso – excepto Test y ValidarCredenciales – es requerido que el cliente incluya el Token
+<p>Para poder acceder a algún un recurso -excepto Test y ValidarCredenciales- es requerido que el cliente incluya el Token
 de acceso - obtenido al validar sus credenciales - en el encabezado de autorización de la petición HTTP.</p>
 <p>A continuación, se describen a detalla los contratos expuestos en el servicio WebAPI.</p>
 <p>URL del servicio en producción: <a class="reference external" href="https://vj.legisoffice.com/LOServiceVJ/">https://vj.legisoffice.com/LOServiceVJ/</a>. Todos los recursos están agrupados sobre el controlador
@@ -232,7 +232,7 @@ código HTTP 401.</p></td>
 Registra la información de una actuación y retorna el identificador único de la actuación.</p>
 <section id="id1">
 <h3>INFORMACIÓN SOLICITUD<a class="headerlink" href="#id1" title="Enlace permanente a este encabezado"></a></h3>
-<p>Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)</p>
+<p>Cabecera de autenticación: Authentication = Token -Espacio- Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)</p>
 <p>Parámetros URL: Ninguno</p>
 <p>Parámetros cuerpo solicitud:</p>
 <table class="docutils align-default">
@@ -334,10 +334,10 @@ en su sistema</p></td>
 </tr>
 </tbody>
 </table>
-<p>Propiedad VencimientoTerminos  de tipo VencimientoTerminoModel.
-.. image:: imagenes/tabla_pvt.png</p>
-<p>Propiedad Audiencias de tipo AudienciaModel.
-.. image:: imagenes/tabla_am.png</p>
+<p>Propiedad VencimientoTerminos  de tipo VencimientoTerminoModel.</p>
+<img alt="_images/tabla_pvt.png" src="_images/tabla_pvt.png" />
+<p>Propiedad Audiencias de tipo AudienciaModel.</p>
+<img alt="_images/tabla_am.png" src="_images/tabla_am.png" />
 </section>
 <section id="id2">
 <h3>INFORMACIÓN RESPUESTA<a class="headerlink" href="#id2" title="Enlace permanente a este encabezado"></a></h3>
@@ -352,8 +352,8 @@ Registra un documento sobre una actuación y retorna si se pudo registrar o no.<
 <h3>INFORMACIÓN SOLICITUD<a class="headerlink" href="#id3" title="Enlace permanente a este encabezado"></a></h3>
 <p>Cabecera de autenticación: Authentication = Token -Espacio- Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)</p>
 <p>Parámetros URL: Ninguno</p>
-<p>Parámetros cuerpo solicitud:
-.. image:: imagenes/tabla4.png</p>
+<p>Parámetros cuerpo solicitud:</p>
+<img alt="_images/tabla4.png" src="_images/tabla4.png" />
 </section>
 <section id="id4">
 <h3>INFORMACIÓN RESPUESTA<a class="headerlink" href="#id4" title="Enlace permanente a este encabezado"></a></h3>
@@ -366,14 +366,14 @@ Registra un documento sobre una actuación y retorna si se pudo registrar o no.<
 Actualiza la información de una actuación y retorna si se pudo actualizar o no.</p>
 <section id="id5">
 <h3>INFORMACIÓN SOLICITUD<a class="headerlink" href="#id5" title="Enlace permanente a este encabezado"></a></h3>
-<p>Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)</p>
+<p>Cabecera de autenticación: Authentication = Token -Espacio- Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)</p>
 <p>Parámetros URL: Ninguno</p>
-<p>Parámetros cuerpo solicitud:
-.. image:: imagenes/tabla6.png</p>
-<p>Propiedad VencimientoTerminos  de tipo VencimientoTerminoModel.
-.. image:: imagenes/tabla7.png</p>
-<p>Propiedad Audiencias de tipo AudienciaModel.
-.. image:: imagenes/tabla8.png</p>
+<p>Parámetros cuerpo solicitud:</p>
+<img alt="_images/tabla6.png" src="_images/tabla6.png" />
+<p>Propiedad VencimientoTerminos  de tipo VencimientoTerminoModel.</p>
+<img alt="_images/tabla7.png" src="_images/tabla7.png" />
+<p>Propiedad Audiencias de tipo AudienciaModel.</p>
+<img alt="_images/tabla8.png" src="_images/tabla8.png" />
 </section>
 <section id="id6">
 <h3>INFORMACIÓN RESPUESTA<a class="headerlink" href="#id6" title="Enlace permanente a este encabezado"></a></h3>
@@ -386,10 +386,10 @@ Actualiza la información de una actuación y retorna si se pudo actualizar o no
 Elimina una actuación y los documentos asociados a la misma. Retorna si se pudo realizar la eliminación o no.</p>
 <section id="id7">
 <h3>INFORMACIÓN SOLICITUD<a class="headerlink" href="#id7" title="Enlace permanente a este encabezado"></a></h3>
-<p>Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)</p>
+<p>Cabecera de autenticación: Authentication = Token -Espacio- Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)</p>
 <p>Parámetros URL: Ninguno</p>
-<p>Parámetros cuerpo solicitud:
-.. image:: imagenes/tabla10.png</p>
+<p>Parámetros cuerpo solicitud:</p>
+<img alt="_images/tabla10.png" src="_images/tabla10.png" />
 </section>
 <section id="id8">
 <h3>INFORMACIÓN RESPUESTA<a class="headerlink" href="#id8" title="Enlace permanente a este encabezado"></a></h3>

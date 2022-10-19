@@ -16,7 +16,7 @@ peticiones HTTP (GET, POST, PUT, DELETE) en formato JSON.
 El servicio WebAPI de LegisOffice se encarga de exponer métodos generales de recepción de información de vigilancia judicial 
 a partir de un mecanismo de autenticación basado en Usuario / Clave / Proveedor. 
 
-Para poder acceder a algún un recurso – excepto Test y ValidarCredenciales – es requerido que el cliente incluya el Token 
+Para poder acceder a algún un recurso -excepto Test y ValidarCredenciales- es requerido que el cliente incluya el Token 
 de acceso - obtenido al validar sus credenciales - en el encabezado de autorización de la petición HTTP.
 
 A continuación, se describen a detalla los contratos expuestos en el servicio WebAPI.
@@ -98,7 +98,7 @@ Registra la información de una actuación y retorna el identificador único de 
 INFORMACIÓN SOLICITUD
 ---------------------
 
-Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)
+Cabecera de autenticación: Authentication = Token -Espacio- Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)
 
 Parámetros URL: Ninguno
 
@@ -143,14 +143,17 @@ Parámetros cuerpo solicitud:
 +--------------+-------------------------------------+----------------+----------------+--------------------------------------------------+
 
 Propiedad VencimientoTerminos  de tipo VencimientoTerminoModel.
+
 .. image:: imagenes/tabla_pvt.png
 
 Propiedad Audiencias de tipo AudienciaModel.
+
 .. image:: imagenes/tabla_am.png
 
 ---------------------
 INFORMACIÓN RESPUESTA
 ---------------------
+
 .. image:: imagenes/tabla3.png
 
 
@@ -170,11 +173,13 @@ Cabecera de autenticación: Authentication = Token -Espacio- Guid obtenido como 
 Parámetros URL: Ninguno
 
 Parámetros cuerpo solicitud:
+
 .. image:: imagenes/tabla4.png
 
 ---------------------
 INFORMACIÓN RESPUESTA
 ---------------------
+
 .. image:: imagenes/tabla5.png
 
 
@@ -188,17 +193,20 @@ Actualiza la información de una actuación y retorna si se pudo actualizar o no
 ---------------------
 INFORMACIÓN SOLICITUD
 ---------------------
-Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)
+Cabecera de autenticación: Authentication = Token -Espacio- Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)
 
 Parámetros URL: Ninguno
 
 Parámetros cuerpo solicitud:
+
 .. image:: imagenes/tabla6.png
 
 Propiedad VencimientoTerminos  de tipo VencimientoTerminoModel.
+
 .. image:: imagenes/tabla7.png
 
 Propiedad Audiencias de tipo AudienciaModel.
+
 .. image:: imagenes/tabla8.png
 
 ---------------------
@@ -217,11 +225,12 @@ Elimina una actuación y los documentos asociados a la misma. Retorna si se pudo
 ---------------------
 INFORMACIÓN SOLICITUD
 ---------------------
-Cabecera de autenticación: Authentication = Token – Espacio – Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)
+Cabecera de autenticación: Authentication = Token -Espacio- Guid obtenido como respuesta al consumir el método ValidarCredenciales codificado en base64 (ISO-8859-1)
 
 Parámetros URL: Ninguno
 
 Parámetros cuerpo solicitud:
+
 .. image:: imagenes/tabla10.png
 
 ---------------------
