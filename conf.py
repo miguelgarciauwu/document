@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'VirtualS'
-copyright = '2022, Harold French'
-author = 'Harold French'
+copyright = '2022, Legis'
+author = 'Legis'
 release = 'es'
 
 # -- General configuration ---------------------------------------------------
