@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'VirtualS'
-copyright = '2022, Legis'
-author = 'Legis'
+project = 'Documentacion-LO'
+copyright = '2022, LegisB'
+author = 'LegisB'
 release = 'es'
 
 # -- General configuration ---------------------------------------------------
