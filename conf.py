@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Documentacion-LO'
-copyright = '2022, LegisB'
-author = 'LegisB'
+copyright = '2022, Legis'
+author = 'Legis'
 release = 'es'
 
 # -- General configuration ---------------------------------------------------
